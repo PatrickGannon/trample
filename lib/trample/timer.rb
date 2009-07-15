@@ -3,7 +3,8 @@ module Trample
     def time
       start = Time.now
       yield
-      Time.now.to_f - start.to_f
+      end_time = Time.now   
+      [end_time.to_f - start.to_f, start, end_time]
     end
   end
 end

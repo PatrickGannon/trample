@@ -2,13 +2,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{trample}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["James Golick", "Jeremy Friesen"]
-  s.date = %q{2009-06-25}
+  s.authors = ["James Golick", "Jeremy Friesen", "Mark Morga", "Sameer Chowdhury"]
+  s.date = %q{2009-07-13}
   s.default_executable = %q{trample}
   s.email = %q{james@giraffesoft.ca}
+  s.add_dependency('scruffy')
   s.executables = ["trample"]
   s.extra_rdoc_files = [
     "LICENSE",
@@ -29,6 +30,11 @@ Gem::Specification.new do |s|
      "lib/trample/runner.rb",
      "lib/trample/session.rb",
      "lib/trample/timer.rb",
+     "lib/trample/statistics.rb",
+     "lib/trample/scruffy_extensions/box_plot.rb",
+     "lib/trample/scruffy_extensions/data_markers.rb",
+     "lib/trample/scruffy_extensions/simple_line.rb",
+     "lib/trample/scruffy_extensions/value_markers.rb",
      "test/cli_test.rb",
      "test/configuration_test.rb",
      "test/fixtures/basic_config.rb",
@@ -40,12 +46,13 @@ Gem::Specification.new do |s|
      "test/test_helper.rb",
      "test/timer_test.rb",
      "test/trample_test.rb",
+     "templates/statistics.html.erb",
      "trample.gemspec"
   ]
   s.homepage = %q{http://github.com/giraffesoft/trample}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.4}
+  s.rubygems_version = %q{1.3.3}
   s.summary = %q{A simple command line tool for stress testing remote resources.}
   s.test_files = [
     "test/cli_test.rb",

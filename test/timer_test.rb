@@ -16,7 +16,7 @@ class TimerTest < Test::Unit::TestCase
     end
 
     should "return the amount of time elapsed while the block was run" do
-      assert_equal(1.5, @obj.time {})
+      assert_equal(1.5, @obj.time {}.first)
     end
   end
 end

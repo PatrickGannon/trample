@@ -25,7 +25,8 @@ class SessionTest < Test::Unit::TestCase
 
   context "Visiting a page" do
     setup do
-      stub(@session).time { 1.4 }
+      @expected_response = [1.4, Time.local(2008), Time.local(2009)]
+      stub(@session).time { @expected_response }
       stub(@session).last_response do
         response = RestClient::Response.new("", stub!)
         stub(response).cookies { {} }
@@ -35,7 +36,9 @@ class SessionTest < Test::Unit::TestCase
     end
 
     should "record the length of time it took to visit that page" do
-      assert_equal [1.4, 1.4, 1.4, 1.4, 1.4, 1.4], @session.response_times
+      expected_response_array = []
+      6.times {expected_response_array << @expected_response}
+      assert_equal expected_response_array, @session.response_times
     end
   end
 
