@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      body {
+        background: black; 
+        font-family: Sans-Serif, Helvetica, Arial;
+        color: white;
+      }
+
+      th, td {
+        text-align: left;
+      }
+    </style>
+
+    <title>Trample</title>
+  </head>
+  <body>
+    <h1>Trample Statistics</h1>
+    
+    <p><%= timestamp.strftime("%c") %></p>
+    
+    <table>
+      <tr>
+        <th>Total Requests:</th><td><%= total_requests %></td>
+      </tr>
+      <tr>
+        <th>Min Response Time:</th><td><%= format("%0.4f", min_duration) %>s</td>
+      </tr>
+      <tr>
+        <th>Max Response Time:</th><td><%= format("%0.4f", max_duration) %>s</td>
+      </tr>
+      <tr>
+        <th>Avg Response Time:</th><td><%= format("%0.4f", avg_duration) %>s</td>
+      </tr>
+    </table>
+
+    <img src="<%= img_file_name %>">
+    
+    <img src="<%= boxplot_file_name %>">
+    
+  </body>
+</html>
