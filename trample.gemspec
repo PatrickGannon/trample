@@ -10,6 +10,11 @@ Gem::Specification.new do |s|
   s.default_executable = %q{trample}
   s.email = %q{james@giraffesoft.ca}
   s.add_dependency('scruffy')
+  s.add_dependency('sevenwire-rest-client')
+  s.add_dependency('log4r')
+  s.add_dependency('builder')
+  s.add_dependency('thor')
+  s.add_dependency('rmagick')
   s.executables = ["trample"]
   s.extra_rdoc_files = [
     "LICENSE",
