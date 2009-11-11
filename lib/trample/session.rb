@@ -42,7 +42,22 @@ module Trample
       end
 
       def post(page)
-        RestClient.post(page.url, page.parameters,page.headers.merge(:cookies => cookies))
+        params = page.parameters
+        
+        if authenticity_token = parse_authenticity_token(@last_response)
+          params.merge! :authenticity_token => authenticity_token
+        end
+        
+        RestClient.post(page.url, params, page.headers.merge(:cookies => cookies))
+      end
+      
+      # Returns the first authenticity token, if one was set.
+      #-------------------------------------------------------------------------
+      def parse_authenticity_token(html)
+        return nil if html.nil?
+        
+        input = Nokogiri::HTML(html).xpath('//input[@name="authenticity_token"]').first
+        input.nil? ? nil : input['value']
       end
   end
 end

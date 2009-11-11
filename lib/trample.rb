@@ -2,6 +2,7 @@ gem 'sevenwire-rest-client'
 require 'log4r'
 require 'rest_client'
 require 'scruffy'
+require 'nokogiri'
 require File.dirname(__FILE__) + "/trample/scruffy_extensions/box_plot"
 require File.dirname(__FILE__) + "/trample/scruffy_extensions/data_markers"
 require File.dirname(__FILE__) + "/trample/scruffy_extensions/value_markers"
