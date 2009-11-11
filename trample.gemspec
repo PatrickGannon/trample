@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.add_dependency('builder')
   s.add_dependency('thor')
   s.add_dependency('rmagick')
+  s.add_dependency('nokogiri')
   s.executables = ["trample"]
   s.extra_rdoc_files = [
     "LICENSE",
